@@ -10,7 +10,8 @@
                 Console.WriteLine("Please select any one from below :\n" +
                 "Press 1 : To Register your First Name.\n" +
                 "Press 2: To Register your Last Name \n" +
-                "Press 3: To enter your Email ID .\n");
+                "Press 3: To enter your Email ID .\n" +
+                "Press 4: to enter your Mobile Number.\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -22,6 +23,9 @@
                         break;
                     case 3:
                         UserDetails.EmailID();
+                        break;
+                    case 4:
+                        UserDetails.MobileNumber();
                         break;
                     default:
                         Console.WriteLine("Invalid option selected ,Please try again !");
