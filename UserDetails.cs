@@ -30,11 +30,18 @@ namespace UserRegistrationSystem
             string regexCondition = "^[a-z0-9]{1,}([._+-]{1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-z]{2,3}){0,1}$";
             Iteration(userInput, regexCondition);
         }
-        public static void MobileNumber()      //UC4
+        public static void MobileNumber()      //UC4    
         {
             Console.WriteLine("Enter your Mobile Number");
             string userInput = Console.ReadLine();
             string regexCondition = "^[9]{1}[1]{1}[ ]{1}[1-9]{1}[0-9]{9}$";
+            Iteration(userInput, regexCondition);
+        }
+        public static void PassMin8Char()      //UC5
+        {
+            Console.WriteLine("Enter your Password");
+            string userInput = Console.ReadLine();
+            string regexCondition = "^[a-zA-Z0-9]{8,}$";
             Iteration(userInput, regexCondition);
         }
         public static void Iteration(string userInput, string regexCondition)
