@@ -48,7 +48,7 @@ namespace UserRegistrationSystem
         {
             Console.WriteLine("Enter your Password");
             string userInput = Console.ReadLine();
-            string regexCondition = "^(?=.*[A-Z]).{1,}[a-z0-9]{7,}$";
+            string regexCondition = "^(?=.*[A-Z]).{1,}[a-zA-Z0-9]{7,}$";
             Iteration(userInput, regexCondition);
         }
         public static void Iteration(string userInput, string regexCondition)
