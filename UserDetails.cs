@@ -44,6 +44,13 @@ namespace UserRegistrationSystem
             string regexCondition = "^[a-zA-Z0-9]{8,}$";
             Iteration(userInput, regexCondition);
         }
+        public static void PassMin8CharAnd1UpperCase() //UC6 (min 8 char and atleast 1 upper case in it.
+        {
+            Console.WriteLine("Enter your Password");
+            string userInput = Console.ReadLine();
+            string regexCondition = "^(?=.*[A-Z]).{1,}[a-z0-9]{7,}$";
+            Iteration(userInput, regexCondition);
+        }
         public static void Iteration(string userInput, string regexCondition)
         {
             if (Regex.IsMatch(userInput,regexCondition))
