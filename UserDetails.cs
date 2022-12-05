@@ -9,6 +9,17 @@ namespace UserRegistrationSystem
 {
     public class UserDetails
     {
+        public static void Iteration(string userInput, string regexCondition)
+        {
+            if (Regex.IsMatch(userInput, regexCondition))
+            {
+                Console.WriteLine("Registered Successfully!\n");
+            }
+            else
+            {
+                Console.WriteLine("Entered Details are not in required format.Please try again!\n");
+            }
+        }
         public static void FirstName()      //UC1
         {
             Console.WriteLine("Enter your FirstName");
@@ -65,15 +76,23 @@ namespace UserRegistrationSystem
             string regexCondition = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
             Iteration(userInput, regexCondition);
         }
-        public static void Iteration(string userInput, string regexCondition)
+        public static void EmailSample()        //UC9  Email Samples Validation .
         {
-            if (Regex.IsMatch(userInput,regexCondition))
+            string[] userInput = {"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au",
+                                "abc@1.com","abc@gmail.com.com","abc+100@gmail.com",
+                                "abc","abc@.com.my","abc123@gmail.a","abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com",
+                                "abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au"};
+            string regexCondition = "^[a-z0-9]{1,}([._+-]{1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-z]{2,3}){0,1}$";
+            foreach(string input in userInput)
             {
-                Console.WriteLine("Registered Successfully!\n");
-            }
-            else
-            {
-                Console.WriteLine("Entered Details are not in required format.Please try again!\n");
+                if (Regex.IsMatch(input, regexCondition))
+                {
+                    Console.WriteLine($"{input} --> Valid");
+                }
+                else
+                {
+                    Console.WriteLine($"{input} --> Invalid");
+                }
             }
         }
     }
