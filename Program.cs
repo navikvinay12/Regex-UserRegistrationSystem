@@ -14,7 +14,8 @@
                 "Press 4: to enter your Mobile Number.\n" +
                 "Press 5: To set your password (minimum 8 characters).\n" +
                 "Press 6: To set password having 8 minimum character and atleast 1 upper case in it .\n" +
-                "Press 7: To set password having 8 min char and atleast 1 upper case and 1 numeric in it.\n");
+                "Press 7: To set password having 8 min char and atleast 1 upper case and 1 numeric in it.\n" +
+                "Press 8: to set password with having exactly 1 special character ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -38,6 +39,11 @@
                         break;
                     case 7:
                         UserDetails.UpperCase1AndNumeric1();
+                        break;
+                    case 8:
+                        retry:
+                        UserDetails.SpecialCharacter1();
+                        goto retry;
                         break;
                     default:
                         Console.WriteLine("Invalid option selected ,Please try again !");

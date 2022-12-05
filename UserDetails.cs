@@ -58,6 +58,13 @@ namespace UserRegistrationSystem
             string regexCondition = "^(?=.*[A-Z]).{1,}(?=.*[0-9]).{1,}[a-zA-Z0-9]{6,}$";
             Iteration(userInput, regexCondition);
         }
+        public static void SpecialCharacter1() //UC8 (all condition same as previous+ 1 exact special Char.)
+        {
+            Console.WriteLine("Enter your Password");
+            string userInput = Console.ReadLine();
+            string regexCondition = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
+            Iteration(userInput, regexCondition);
+        }
         public static void Iteration(string userInput, string regexCondition)
         {
             if (Regex.IsMatch(userInput,regexCondition))
